@@ -1,4 +1,3 @@
 .wa-float { position: fixed; right: 1rem; bottom: 1rem; z-index: 40; display: inline-flex; align-items: center; gap: .5rem; background: var(--wa); color: #fff; padding: .75rem 1.1rem; border-radius: 999px; text-decoration: none; font-weight: 500; box-shadow: 0 6px 20px rgba(67,27,48,.25); }
 .wa-float:hover { background: #14523a; }
 @media (max-width: 600px) { .wa-float span { display: none; } .wa-float { padding: .9rem; } }
-.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

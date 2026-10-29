@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
-import { NAV } from '../data/site';
-import WhatsAppButton from './WhatsAppButton';
+import { NAV, LOGO } from '../data/site';
 import './Header.css';
 
 export default function Header() {
@@ -12,12 +11,12 @@ export default function Header() {
   const go = useNavigate();
   const close = () => { setOpen(false); setSub(null); };
   const search = (e) => { e.preventDefault(); if (q.trim()) { go(`/search?q=${encodeURIComponent(q.trim())}`); setQ(''); close(); } };
-  const within = (n) => [n.to, ...n.children.map((c) => c.to)].some((t) => pathname === t || pathname.startsWith(`${t}/`));
+  const within = (n) => [n.to, ...(n.children || []).map((c) => c.to)].some((t) => pathname === t || pathname.startsWith(`${t}/`));
   return (
     <header className="hdr">
       <a className="skip" href="#main">Skip to content</a>
       <div className="container hdr__bar">
-        <Link to="/" className="hdr__logo" onClick={close}><span>Favion</span><small>Bridals and Events</small></Link>
+        <Link to="/" className="hdr__logo" onClick={close}><img src={LOGO} alt="Favion Bridals and Events" width="724" height="602" /></Link>
         <button className="hdr__burger" aria-expanded={open} aria-controls="nav" onClick={() => setOpen(!open)}>{open ? 'Close' : 'Menu'}</button>
         <nav id="nav" className={`hdr__nav ${open ? 'is-open' : ''}`} aria-label="Main">
           <ul>

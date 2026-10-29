@@ -11,7 +11,7 @@ export default function Hero() {
           <h1>Your Dream Wedding. Your Perfect Look. Your Favion Experience.</h1>
           <p>Discover exquisite bridal gowns, beautiful accessories, and thoughtful event planning designed to make your special moments unforgettable.</p>
           <div className="btn-row">
-            <Link className="btn" to="/bridal-collection">Explore the Bridal Collection</Link>
+            <Link className="btn" to="/gowns">Explore Our Gowns</Link>
             <Link className="btn btn--ghost" to="/event-planning">Plan Your Wedding</Link>
             <WhatsAppButton>Chat with Favion on WhatsApp</WhatsAppButton>
           </div>

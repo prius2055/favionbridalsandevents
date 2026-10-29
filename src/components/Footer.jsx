@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import { SITE, NAV, POLICIES } from '../data/site';
+import { SITE, NAV, POLICIES, LOGO_LIGHT } from '../data/site';
 import './Footer.css';
 export default function Footer() {
   return (
     <footer className="ftr">
       <div className="container ftr__grid">
-        <div><p className="ftr__brand">Favion</p><p>Bridal gown rental, accessories, venues and event planning.</p></div>
+        <div><img className="ftr__logo" src={LOGO_LIGHT} alt="Favion Bridals and Events" width="724" height="602" /><p>Bridal gown rental, accessories, venues and event planning.</p></div>
         <nav aria-label="Explore"><h3>Explore</h3><ul>{NAV.flatMap((n) => n.children || [n]).filter((n) => n.to !== '/').map((n) => <li key={n.to}><Link to={n.to}>{n.label}</Link></li>)}</ul></nav>
         <nav aria-label="Information"><h3>Information</h3><ul>
           <li><Link to="/faq">Frequently asked questions</Link></li>

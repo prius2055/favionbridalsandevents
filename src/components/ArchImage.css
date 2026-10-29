@@ -1,0 +1,6 @@
+.arch { position: relative; width: 100%; overflow: hidden; border-radius: 50% 50% 6px 6px / 28% 28% 6px 6px; background: linear-gradient(160deg, var(--blush), #EBCFC8); display: grid; place-items: end center; }
+.arch--t1 { background: linear-gradient(160deg, #F1E6D6, #E2CFAF); }
+.arch--t2 { background: linear-gradient(160deg, #EAD7DD, #D3AEBB); }
+.arch--t3 { background: linear-gradient(160deg, #F6EDE4, #E8D8CA); }
+.arch img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.arch__label { padding: 0 1rem 1.2rem; font: italic 400 .95rem var(--serif); color: var(--plum); text-align: center; opacity: .8; }

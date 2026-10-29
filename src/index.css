@@ -20,6 +20,7 @@ a { color: inherit; }
 .section { padding-block: clamp(3rem, 8vw, 6rem); }
 .section--blush { background: var(--blush); } .section--plum { background: var(--plum); color: var(--ivory); }
 .section--plum h2, .section--plum h3 { color: var(--ivory); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .grid { display: grid; gap: var(--gap); }
 .grid--4 { grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); }
 .grid--3 { grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); }
