@@ -1,0 +1,7 @@
+.pc__media { display: block; }
+.pc__body { padding-top: 1rem; }
+.pc h3 { font-size: 1.25rem; margin-bottom: .3rem; } .pc h3 a { text-decoration: none; } .pc h3 a:hover { color: var(--burgundy); }
+.pc__meta { font-size: .8rem; color: var(--muted); margin-bottom: .3rem; }
+.pc__tag { font-weight: 600; color: var(--gold); } .pc__tag--sale { color: var(--burgundy); }
+.pc__detail { font-size: .86rem; color: var(--muted); margin-bottom: .5rem; }
+.pc__price { font-weight: 600; margin-bottom: .8rem; }
