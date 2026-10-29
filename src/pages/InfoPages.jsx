@@ -26,7 +26,7 @@ export function Contact() {
   return (
     <div className="container">
       <div className="page-head"><h1>Contact</h1><p>The quickest way to reach us is WhatsApp.</p></div>
-      <dl className="specs"><dt>WhatsApp</dt><dd>{SITE.whatsappDisplay}</dd><dt>Address</dt><dd>{SITE.address}</dd><dt>Hours</dt><dd>{SITE.hours}</dd></dl>
+      <dl className="specs"><dt>Phone and WhatsApp</dt><dd><a href={`tel:${SITE.phoneLink}`}>{SITE.whatsappDisplay}</a></dd><dt>Address</dt><dd>{SITE.address}</dd><dt>Hours</dt><dd>{SITE.hours}</dd></dl>
       <p className="section"><WhatsAppButton>Chat with Favion on WhatsApp</WhatsAppButton></p>
     </div>
   );

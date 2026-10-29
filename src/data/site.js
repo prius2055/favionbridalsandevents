@@ -5,10 +5,11 @@ export const LOGO_LIGHT = `${import.meta.env.BASE_URL}images/favion-logo-light.p
 // All editable site content lives here. Replace the placeholders marked SAMPLE with real details.
 export const SITE = {
   name: 'Favion Bridals and Events',
-  whatsapp: '2340000000000', // SAMPLE: international format, digits only, e.g. 2348012345678
-  whatsappDisplay: '+234 000 000 0000', // SAMPLE
-  address: 'Abuja, Nigeria', // SAMPLE
-  hours: 'Mon to Sat, 9am to 6pm', // SAMPLE
+  whatsapp: '2349034365585', // international format, digits only; every WhatsApp enquiry goes to this number
+  whatsappDisplay: '+234 903 436 5585',
+  phoneLink: '+2349034365585',
+  address: 'Block A, Shop 106, Maitama Modern Market, Kubwa, Abuja',
+  hours: 'Daily, 9am to 5:30pm. Sundays by appointment only.',
 };
 
 export const CATEGORIES = {
@@ -88,6 +89,19 @@ export const PHOTOS = [
   { src: img('gown-lace-sleeve-clutch'), alt: 'Bride in a lace-sleeve gown holding a pearl clutch' },
   { src: img('dress-short-pearl-corset'), alt: 'Short tulle dress with a pearl corset bodice' },
   { src: img('gown-tulle-corset'), alt: 'Beaded corset gown with a tulle overskirt' },
+  { src: img('hero-bride-lobby'), alt: 'Bride in a long-sleeve gown with a detachable overskirt' },
+  { src: img('hero-bride-offshoulder'), alt: 'Bride in an embroidered off-shoulder ball gown holding a bouquet' },
+  { src: img('hero-mermaid-veil'), alt: 'Bride in a beaded mermaid gown with a long veil' },
+  { src: img('hero-gown-display'), alt: 'Ball gown with a beaded bodice on display' },
+  { src: img('hero-bride-gypsophila'), alt: 'Bride in a lace gown holding a gypsophila bouquet' },
+  { src: img('hero-bride-bouquet'), alt: 'Bride in a beaded gown holding a cascade bouquet' },
+];
+
+// Homepage hero: each arch cycles through two photos.
+export const HERO_SLOTS = [
+  { ratio: '3 / 4.4', photos: [{ src: img('hero-bride-lobby'), alt: 'Bride in a long-sleeve gown with a detachable overskirt' }, { src: img('hero-bride-offshoulder'), alt: 'Bride in an embroidered off-shoulder ball gown holding a bouquet' }] },
+  { ratio: '3 / 4', photos: [{ src: img('hero-mermaid-veil'), alt: 'Bride in a beaded mermaid gown with a long veil' }, { src: img('hero-gown-display'), alt: 'Ball gown with a beaded bodice on display' }] },
+  { ratio: '3 / 3.4', photos: [{ src: img('hero-bride-gypsophila'), alt: 'Bride in a lace gown holding a gypsophila bouquet' }, { src: img('hero-bride-bouquet'), alt: 'Bride in a beaded gown holding a cascade bouquet' }] },
 ];
 
 const SZ = ['UK 8', 'UK 10', 'UK 12', 'UK 14', 'UK 16'];

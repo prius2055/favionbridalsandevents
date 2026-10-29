@@ -1,8 +1,24 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import ArchImage from './ArchImage';
 import WhatsAppButton from './WhatsAppButton';
-import { PHOTOS } from '../data/site';
+import { HERO_SLOTS } from '../data/site';
 import './Hero.css';
+
+// One arch that slowly fades between its photos.
+function Slot({ photos, ratio, delay }) {
+  const [i, setI] = useState(0);
+  useEffect(() => {
+    if (photos.length < 2) return undefined;
+    const t = setInterval(() => setI((n) => (n + 1) % photos.length), delay);
+    return () => clearInterval(t);
+  }, [photos.length, delay]);
+  return (
+    <div className="arch hero__slot" style={{ aspectRatio: ratio }}>
+      {photos.map((p, k) => <img key={p.src} src={p.src} alt={k === i ? p.alt : ''} aria-hidden={k !== i} className={k === i ? 'is-on' : ''} loading={k === 0 ? 'eager' : 'lazy'} />)}
+    </div>
+  );
+}
+
 export default function Hero() {
   return (
     <section className="hero">
@@ -16,10 +32,10 @@ export default function Hero() {
             <WhatsAppButton>Chat with Favion on WhatsApp</WhatsAppButton>
           </div>
         </div>
-        <div className="hero__arches" aria-hidden="false">
-          <div className="hero__a hero__a--1"><ArchImage label="Bridal portrait" ratio="3 / 4.4" src={PHOTOS[0].src} alt={PHOTOS[0].alt} /></div>
-          <div className="hero__a hero__a--2"><ArchImage label="Mermaid gown" ratio="3 / 4" src={PHOTOS[3].src} alt={PHOTOS[3].alt} /></div>
-          <div className="hero__a hero__a--3"><ArchImage label="Crown and bouquet" ratio="3 / 3.4" src={PHOTOS[1].src} alt={PHOTOS[1].alt} /></div>
+        <div className="hero__arches">
+          {HERO_SLOTS.map((s, n) => (
+            <div key={n} className={`hero__a hero__a--${n + 1}`}><Slot photos={s.photos} ratio={s.ratio} delay={6000 + n * 1500} /></div>
+          ))}
         </div>
       </div>
     </section>
