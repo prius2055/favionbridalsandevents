@@ -8,7 +8,7 @@ export default function Venues() {
       <div className="grid grid--3 section">
         {VENUES.map((v, i) => (
           <article key={v.slug} className="tile">
-            <Link to={`/venues/${v.slug}`}><ArchImage label={v.name} tone={i} ratio="4 / 4.2" /></Link>
+            <Link to={`/venues/${v.slug}`}><ArchImage label={v.name} tone={i} ratio="4 / 4.2" src={v.images?.[0]?.src} alt={v.images?.[0]?.alt} /></Link>
             <h3><Link to={`/venues/${v.slug}`}>{v.name}</Link></h3>
             <p className="eyebrow">{v.area} · {v.capacity}</p>
             <p>{v.summary}</p>

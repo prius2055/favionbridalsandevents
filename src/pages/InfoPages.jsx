@@ -1,14 +1,15 @@
 import { useParams, Link } from 'react-router-dom';
 import ArchImage from '../components/ArchImage';
 import WhatsAppButton from '../components/WhatsAppButton';
-import { SITE, PHOTOS, FAQS, POLICIES, POLICY_TEXT } from '../data/site';
+import Banner from '../components/Banner';
+import { SITE, PHOTOS, BANNERS, FAQS, POLICIES, POLICY_TEXT } from '../data/site';
 import NotFound from './NotFound';
 
 export function Gallery() {
   return (
     <div className="container">
       <div className="page-head"><h1>Gallery</h1><p>A look at our gowns, accessories and events.</p></div>
-      <div className="grid grid--4 section">{PHOTOS.filter((p) => p.src).map((p, i) => <ArchImage key={i} label={p.alt} tone={i} ratio="3 / 3.8" src={p.src} alt={p.alt} />)}</div>
+      <div className="masonry section">{PHOTOS.filter((p) => p.src).map((p, i) => <ArchImage key={p.src} label={p.alt} tone={i} ratio={p.ratio || '3 / 3.8'} flat={p.flat} src={p.src} alt={p.alt} />)}</div>
     </div>
   );
 }
@@ -16,6 +17,7 @@ export function About() {
   return (
     <div className="container">
       <div className="page-head"><h1>About Favion</h1></div>
+      <div className="banner-gap"><Banner image={BANNERS.celebration} ratio="16 / 7" /></div>
       <p>{SITE.name} rents gowns, bridal robes and accessories, helps couples find venues, and plans weddings and events.</p>
       <p>Tell us your date and what you have in mind on WhatsApp, and we will take it from there.</p>
       <p className="section"><WhatsAppButton>Chat with Favion on WhatsApp</WhatsAppButton></p>

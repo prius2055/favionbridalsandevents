@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { SERVICES } from '../data/site';
+import Banner from '../components/Banner';
+import { SERVICES, BANNERS } from '../data/site';
 import { waLink, eventMessage } from '../utils/whatsapp';
 const TYPES = ['Wedding', 'Traditional wedding', 'Engagement', 'Birthday', 'Other'];
 export default function EventPlanning() {
@@ -18,6 +19,7 @@ export default function EventPlanning() {
   return (
     <div className="container">
       <div className="page-head"><h1>Event Planning</h1><p>From a single service to full planning, we help you create an event your guests will remember.</p></div>
+      <Banner image={BANNERS.consult} />
       <div className="grid grid--3 section">
         {SERVICES.map((s) => <article key={s.slug} className="card"><h3>{s.label}</h3><p>{s.summary}</p><Link className="btn btn--ghost btn--sm" to={`/event-planning/${s.slug}`}>Learn more</Link></article>)}
       </div>

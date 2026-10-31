@@ -1,5 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import WhatsAppButton from '../components/WhatsAppButton';
+import ArchImage from '../components/ArchImage';
+import Banner from '../components/Banner';
 import { SERVICES } from '../data/site';
 import { serviceMessage } from '../utils/whatsapp';
 import NotFound from './NotFound';
@@ -11,7 +13,9 @@ export default function ServicePage() {
     <div className="container">
       <p className="crumbs"><Link to="/event-planning">Event Planning</Link> / {s.label}</p>
       <div className="page-head"><h1>{s.label}</h1><p>{s.summary}</p></div>
+      {s.banner && <div className="banner-gap"><Banner image={s.banner} /></div>}
       <ul className="ticks">{s.points.map((x) => <li key={x}>{x}</li>)}</ul>
+      {s.images && <div className="masonry">{s.images.map((m) => <ArchImage key={m.src} flat ratio={m.ratio} label={s.label} src={m.src} alt={m.alt} />)}</div>}
       <div className="btn-row section"><WhatsAppButton message={serviceMessage(s)}>Enquire on WhatsApp</WhatsAppButton><Link className="btn btn--ghost" to="/event-planning">All services</Link></div>
     </div>
   );

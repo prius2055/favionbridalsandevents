@@ -12,6 +12,24 @@ export const SITE = {
   hours: 'Daily, 9am to 5:30pm. Sundays by appointment only.',
 };
 
+const M = (name, alt, extra = {}) => ({ src: img(name), alt, ...extra });
+// Wide, sharp photos (1200px+) that are safe to stretch across a full-width banner. Use these, and only images like these, in <Banner>.
+export const BANNERS = {
+  consult: M('banner-consult', 'A Favion planner and a smiling bride reviewing wedding plans on a tablet at the Favion Bridals studio', { position: '50% 35%' }),
+  celebration: M('banner-celebration', 'A bride in a lace ball gown holding up her bouquet beside her groom, cheered on by the Favion team', { position: '50% 30%' }),
+  stress: M('banner-planning-stress', 'A stressed bride in a satin robe looking at her phone beside a wedding plan checklist with a note reading too much to do', { position: '50% 12%' }),
+};
+// Smaller or portrait photos: used in galleries, cards and venue pages, never stretched into banners.
+export const MEDIA = {
+  stageFloral: M('decor-stage-floral', 'Ivory draped stage backdrop with a hanging floral arrangement, crystal lights and a white sofa', { ratio: '736 / 847' }),
+  stageDrapes: M('decor-stage-drapes', 'Cross-draped ivory and gold stage backdrop with flower stands, candles and a cream loveseat', { ratio: '3 / 4' }),
+  tables: M('decor-tables-green', 'Reception tables with white chair covers, emerald green sashes and gold table runners', { ratio: '3 / 4' }),
+  entrance: M('decor-entrance', 'White wedding entrance arches with cascading roses and pampas grass leading to a canopy', { ratio: '828 / 636' }),
+  stageBride: M('gown-lace-illusion-stage', 'Bride in a high-neck lace ball gown with a veil and tiara on a wedding stage'),
+  stageBrideWide: M('stage-radiant-bride', 'Bride in a high-neck lace ball gown walking on a pink-carpeted wedding stage', { ratio: '3 / 2' }),
+  behindScenes: M('behind-the-scenes', 'Behind the scenes: a makeup artist touching up a bride in a beaded gown', { ratio: '3 / 4' }),
+};
+
 export const CATEGORIES = {
   'wedding-gowns': { label: 'Wedding Gowns', blurb: 'Bridal gowns to rent in every silhouette.' },
   'bridesmaid-robes': { label: 'Bridesmaid Robes', blurb: 'Matching robes for getting-ready photographs.' },
@@ -31,10 +49,10 @@ export const GROUPS = {
 };
 
 export const SERVICES = [
-  { slug: 'wedding-planning', label: 'Wedding Planning', summary: 'Full planning from the first idea to the last dance.', points: ['Budget and timeline planning', 'Vendor selection and booking', 'Guest list and invitation guidance', 'Rehearsal and run-of-show'] },
-  { slug: 'decor-styling', label: 'Decor and Styling', summary: 'A cohesive look for your ceremony and reception.', points: ['Colour palette and theme design', 'Stage, table and aisle styling', 'Floral and lighting direction', 'Set-up and take-down'] },
-  { slug: 'venue-sourcing', label: 'Venue Sourcing', summary: 'Help finding and securing the right venue.', points: ['Shortlist matched to your guest count and budget', 'Venue visits and comparisons', 'Support with venue terms'] },
-  { slug: 'day-coordination', label: 'Day-of Coordination', summary: 'A calm, organised wedding day for you and your family.', points: ['Vendor and timeline management', 'Guest flow and seating support', 'Single point of contact on the day'] },
+  { slug: 'wedding-planning', banner: BANNERS.consult, label: 'Wedding Planning', summary: 'Full planning from the first idea to the last dance.', points: ['Budget and timeline planning', 'Vendor selection and booking', 'Guest list and invitation guidance', 'Rehearsal and run-of-show'] },
+  { slug: 'decor-styling', images: [MEDIA.stageFloral, MEDIA.stageDrapes, MEDIA.entrance], label: 'Decor and Styling', summary: 'A cohesive look for your ceremony and reception.', points: ['Colour palette and theme design', 'Stage, table and aisle styling', 'Floral and lighting direction', 'Set-up and take-down'] },
+  { slug: 'venue-sourcing', images: [MEDIA.tables, MEDIA.stageDrapes], label: 'Venue Sourcing', summary: 'Help finding and securing the right venue.', points: ['Shortlist matched to your guest count and budget', 'Venue visits and comparisons', 'Support with venue terms'] },
+  { slug: 'day-coordination', banner: BANNERS.celebration, label: 'Day-of Coordination', summary: 'A calm, organised wedding day for you and your family.', points: ['Vendor and timeline management', 'Guest flow and seating support', 'Single point of contact on the day'] },
 ];
 
 // Main menu. Event Planning keeps its own dropdown of services.
@@ -75,7 +93,7 @@ export const PHOTOS = [
   { src: img('gown-crowned-champagne'), alt: 'Bride wearing a crown and holding a bouquet' },
   { src: null, alt: 'Bridesmaids in matching robes' },
   { src: img('gown-red-mermaid'), alt: 'Red mermaid gown with a ruffled sleeve' },
-  { src: null, alt: 'Wedding reception decor' },
+  { src: img('decor-stage-floral'), alt: 'Wedding reception stage with a floral backdrop', ratio: '736 / 847', flat: true },
   { src: img('bouquet-ivory-rose'), alt: 'Ivory rose bridal bouquet' },
   { src: img('rings-gold-bands'), alt: 'Pair of gold wedding bands' },
   { src: img('robe-ruffle-sleeve'), alt: 'White tulle bridal robe with ruffled sleeves' },
@@ -95,6 +113,14 @@ export const PHOTOS = [
   { src: img('hero-gown-display'), alt: 'Ball gown with a beaded bodice on display' },
   { src: img('hero-bride-gypsophila'), alt: 'Bride in a lace gown holding a gypsophila bouquet' },
   { src: img('hero-bride-bouquet'), alt: 'Bride in a beaded gown holding a cascade bouquet' },
+  { ...BANNERS.celebration, ratio: '1280 / 1024', flat: true },
+  { ...MEDIA.stageDrapes, flat: true },
+  { ...MEDIA.stageBrideWide, flat: true },
+  { ...BANNERS.consult, ratio: '1280 / 853', flat: true },
+  { ...MEDIA.tables, flat: true },
+  { ...MEDIA.entrance, flat: true },
+  { ...BANNERS.stress, ratio: '1280 / 853', flat: true },
+  { ...MEDIA.behindScenes, flat: true },
 ];
 
 // Homepage hero: each arch cycles through two photos.
@@ -121,6 +147,7 @@ export const PRODUCTS = [
   { ref: 'WG-109', name: 'Red Mermaid Gown', category: 'wedding-gowns', mode: 'Rent', style: 'Mermaid', sizes: SZ, colours: ['Red'], price: null, images: pic('gown-red-mermaid', 'Red mermaid gown'), description: 'A fitted red mermaid gown with a ruffled sleeve and a tiered train.' },
   { ref: 'WG-110', name: 'Short Pearl Corset Dress', category: 'wedding-gowns', mode: 'Rent', style: 'Short dress', sizes: SZ.slice(0, 4), colours: ['White'], price: null, images: pic('dress-short-pearl-corset', 'Short tulle dress with a pearl corset'), description: 'A short tulle dress with a pearl-beaded corset and criss-cross neckline, for receptions and photo shoots.' },
   { ref: 'WG-111', name: 'Tulle Corset Gown', category: 'wedding-gowns', mode: 'Rent', style: 'Corset gown', sizes: SZ.slice(0, 4), colours: ['White'], price: null, images: pic('gown-tulle-corset', 'Beaded corset gown with a tulle overskirt'), description: 'A beaded corset bodice with a sheer tulle overskirt and a long train.' },
+  { ref: 'WG-112', name: 'Lace Illusion Ball Gown', category: 'wedding-gowns', mode: 'Rent', style: 'Ball gown', sizes: SZ, colours: ['White'], price: null, images: [MEDIA.stageBride], description: 'A high illusion neckline with short lace sleeves and a full tiered lace skirt, styled with a veil and tiara.' },
   { ref: 'BR-501', name: 'Feather-Trim Tulle Robe', category: 'bridal-robes', mode: 'Rent', style: 'Tulle robe', sizes: [], colours: ['Caramel'], price: null, images: pic('robe-feather-caramel', 'Caramel tulle robe with feather trim'), description: 'A sheer tulle robe with soft feather trim on the sleeves and hem.' },
   { ref: 'BR-502', name: 'Ruffle Sleeve Tulle Robe', category: 'bridal-robes', mode: 'Rent', style: 'Tulle robe', sizes: [], colours: ['White'], price: null, images: pic('robe-ruffle-sleeve', 'White tulle robe with ruffled sleeves'), description: 'A flowing white robe with dramatic ruffled sleeves and a high slit.' },
   { ref: 'BR-503', name: 'Cloud Tulle Train Robe', category: 'bridal-robes', mode: 'Rent', style: 'Tulle robe', sizes: [], colours: ['White'], price: null, images: pic('robe-cloud-tulle', 'White tulle robe with a ruffled train'), description: 'A white tulle robe with puffed sleeves and a ruffle-edged train.' },
@@ -141,7 +168,7 @@ export const PRODUCTS = [
 
 // SAMPLE venues
 export const VENUES = [
-  { slug: 'garden-pavilion', name: 'The Garden Pavilion', area: 'Abuja', capacity: '150 to 300 guests', summary: 'An open garden with a covered pavilion for ceremony and reception.', features: ['Garden ceremony space', 'Covered pavilion', 'Parking'], gallery: 4 },
-  { slug: 'grand-ballroom', name: 'The Grand Ballroom', area: 'Abuja', capacity: '300 to 600 guests', summary: 'A large indoor hall suited to a formal reception.', features: ['Air-conditioned hall', 'Stage and lighting', 'Bridal suite'], gallery: 4 },
-  { slug: 'courtyard-terrace', name: 'The Courtyard Terrace', area: 'Abuja', capacity: '60 to 150 guests', summary: 'An intimate terrace for smaller celebrations.', features: ['Terrace setting', 'Flexible layout', 'Evening lighting'], gallery: 3 },
+  { slug: 'garden-pavilion', images: [MEDIA.entrance, MEDIA.tables], name: 'The Garden Pavilion', area: 'Abuja', capacity: '150 to 300 guests', summary: 'An open garden with a covered pavilion for ceremony and reception.', features: ['Garden ceremony space', 'Covered pavilion', 'Parking'], gallery: 4 },
+  { slug: 'grand-ballroom', images: [MEDIA.stageDrapes, MEDIA.tables, MEDIA.stageFloral], name: 'The Grand Ballroom', area: 'Abuja', capacity: '300 to 600 guests', summary: 'A large indoor hall suited to a formal reception.', features: ['Air-conditioned hall', 'Stage and lighting', 'Bridal suite'], gallery: 4 },
+  { slug: 'courtyard-terrace', images: [MEDIA.stageFloral, MEDIA.entrance], name: 'The Courtyard Terrace', area: 'Abuja', capacity: '60 to 150 guests', summary: 'An intimate terrace for smaller celebrations.', features: ['Terrace setting', 'Flexible layout', 'Evening lighting'], gallery: 3 },
 ];

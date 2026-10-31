@@ -14,7 +14,11 @@ export default function VenueDetail() {
       <div className="page-head"><h1>{v.name}</h1><p>{v.summary}</p></div>
       <p className="eyebrow">{v.area} · {v.capacity}</p>
       <ul className="ticks">{v.features.map((f) => <li key={f}>{f}</li>)}</ul>
-      <div className="grid grid--4 section">{Array.from({ length: v.gallery }, (_, i) => <ArchImage key={i} label={`${v.name} photo ${i + 1}`} tone={i} ratio="3 / 3.6" />)}</div>
+      <div className="masonry section">
+        {v.images?.length
+          ? v.images.map((m) => <ArchImage key={m.src} flat ratio={m.ratio} label={v.name} src={m.src} alt={m.alt} />)
+          : Array.from({ length: v.gallery }, (_, i) => <ArchImage key={i} label={`${v.name} photo ${i + 1}`} tone={i} ratio="3 / 3.6" />)}
+      </div>
       <WhatsAppButton message={venueMessage(v)}>Enquire about this venue</WhatsAppButton>
     </div>
   );
