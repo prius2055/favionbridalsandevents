@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, Navigate } from 'react-router-dom';
 import ArchImage from '../components/ArchImage';
 import WhatsAppButton from '../components/WhatsAppButton';
 import ProductCard from '../components/ProductCard';
@@ -8,8 +8,9 @@ import NotFound from './NotFound';
 
 export default function ProductDetail() {
   const { ref } = useParams();
-  const p = PRODUCTS.find((x) => x.ref === ref);
+  const p = PRODUCTS.find((x) => x.ref === ref) || PRODUCTS.find((x) => x.aliases?.includes(ref));
   if (!p) return <NotFound />;
+  if (p.ref !== ref) return <Navigate to={`/product/${p.ref}`} replace />; // old reference, e.g. WG-108
   const related = PRODUCTS.filter((x) => x.category === p.category && x.ref !== p.ref).slice(0, 4);
   return (
     <div className="container">

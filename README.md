@@ -16,3 +16,4 @@ npm install && npm run dev
 - Banners: `src/components/Banner.jsx` shows a full-width photo, optionally with text over a plum gradient. Only use images registered in `BANNERS` (`src/data/site.js`): wide and at least 1200px. Portrait or small photos live in `MEDIA` and are used in galleries, cards and venue pages instead.
 - Photo helpers in `site.js`: `BANNERS` (wide, sharp), `MEDIA` (decor, stage, behind the scenes), `PHOTOS` (gallery order). Services and venues take an `images` list; services can also take a `banner`.
 - Venue photos are stand-ins until you add photos of the real venues.
+- Products can carry `aliases` (old references). Visiting `/product/<alias>` redirects to the current reference, so shared links keep working after a product is renumbered.
