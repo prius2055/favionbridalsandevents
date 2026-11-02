@@ -3,6 +3,7 @@ import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import WhatsAppFloat from './components/WhatsAppFloat';
+import Meta from './components/Meta';
 import Home from './pages/Home';
 import Catalogue from './pages/Catalogue';
 import ProductDetail from './pages/ProductDetail';
@@ -21,12 +22,13 @@ export default function App() {
   }, [pathname]);
   return (
     <>
+      <Meta />
       <Header />
       <main id="main">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/gowns" element={<Catalogue title="Gowns" intro="Wedding gowns to rent in every silhouette. Choose a style, then enquire with your date and size." slugs={GROUPS.gowns} />} />
-          <Route path="/bridal-robes" element={<Catalogue title="Bridal Robes" intro="Tulle robes for getting-ready photographs and bridal portraits. Enquire with your date." slugs={GROUPS.robes} />} />
+          <Route path="/gowns" element={<Catalogue title="Gowns" intro="Wedding gowns to rent for ₦50,000 – ₦150,000 or to buy for ₦250,000 – ₦400,000, depending on finishings. Choose a style, then enquire with your date." slugs={GROUPS.gowns} />} />
+          <Route path="/bridal-robes" element={<Catalogue title="Bridal Robes" intro="Tulle robes for getting-ready photographs and bridal portraits, to rent from ₦20,000. Enquire with your date." slugs={GROUPS.robes} />} />
           <Route path="/bridesmaid" element={<Catalogue title="Bridesmaid" intro="Bridesmaid robes and coordinated bridal train outfits." slugs={GROUPS.party} />} />
           <Route path="/accessories" element={<Catalogue title="Bridal Accessories" intro="Tiaras, shoes, jewellery and bouquets to complete the look." slugs={GROUPS.accessories} />} />
           <Route path="/bridal-collection" element={<Navigate to="/gowns" replace />} />

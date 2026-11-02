@@ -4,6 +4,7 @@ import WhatsAppButton from '../components/WhatsAppButton';
 import Banner from '../components/Banner';
 import { SITE, PHOTOS, BANNERS, FAQS, POLICIES, POLICY_TEXT } from '../data/site';
 import NotFound from './NotFound';
+import { boldPrices } from '../utils/boldPrices';
 
 export function Gallery() {
   return (
@@ -28,7 +29,7 @@ export function Contact() {
   return (
     <div className="container">
       <div className="page-head"><h1>Contact</h1><p>The quickest way to reach us is WhatsApp.</p></div>
-      <dl className="specs"><dt>Phone and WhatsApp</dt><dd><a href={`tel:${SITE.phoneLink}`}>{SITE.whatsappDisplay}</a></dd><dt>Address</dt><dd>{SITE.address}</dd><dt>Hours</dt><dd>{SITE.hours}</dd></dl>
+      <dl className="specs"><dt>Phone and WhatsApp</dt><dd><a href={`tel:${SITE.phoneLink}`}>{SITE.whatsappDisplay}</a></dd><dt>Address</dt><dd>{SITE.address}<br /><a href={SITE.mapsUrl || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(SITE.address)}`} target="_blank" rel="noopener noreferrer">Open in Google Maps</a></dd><dt>Hours</dt><dd>{SITE.hours}</dd></dl>
       <p className="section"><WhatsAppButton>Chat with Favion on WhatsApp</WhatsAppButton></p>
     </div>
   );
@@ -37,7 +38,7 @@ export function Faq() {
   return (
     <div className="container">
       <div className="page-head"><h1>Frequently asked questions</h1></div>
-      <div className="faq">{FAQS.map((f) => <details key={f.q}><summary>{f.q}</summary><p>{f.a}</p></details>)}</div>
+      <div className="faq">{FAQS.map((f) => <details key={f.q}><summary>{f.q}</summary><p>{boldPrices(f.a)}</p></details>)}</div>
     </div>
   );
 }

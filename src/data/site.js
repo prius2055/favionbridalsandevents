@@ -10,6 +10,7 @@ export const SITE = {
   phoneLink: '+2349034365585',
   address: 'Block A, Shop 106, Maitama Modern Market, Kubwa, Abuja',
   hours: 'Daily, 9am to 5:30pm. Sundays by appointment only.',
+  mapsUrl: '', // optional: paste your Google Maps share link; otherwise a map search for the address is used
 };
 
 const M = (name, alt, extra = {}) => ({ src: img(name), alt, ...extra });
@@ -31,14 +32,14 @@ export const MEDIA = {
 };
 
 export const CATEGORIES = {
-  'wedding-gowns': { label: 'Wedding Gowns', blurb: 'Bridal gowns to rent in every silhouette.' },
+  'wedding-gowns': { label: 'Wedding Gowns', blurb: 'Bridal gowns to rent or buy, in silhouettes to suit every bride.', rentRange: [50000, 150000], buyRange: [250000, 400000], priceNote: 'Rent for ₦50,000 – ₦150,000 or buy for ₦250,000 – ₦400,000, depending on the gown’s finishings. Message us for the exact price of this gown.' },
   'bridesmaid-robes': { label: 'Bridesmaid Robes', blurb: 'Matching robes for getting-ready photographs.' },
   'bridal-train-outfits': { label: 'Bridal Train Outfits', blurb: 'Coordinated outfits for your bridal train.' },
   'tiaras-crowns': { label: 'Tiaras and Crowns', blurb: 'Finishing touches for the veil and hair.' },
   'bridal-shoes': { label: 'Bridal Shoes', blurb: 'Comfortable, beautiful shoes for the day.' },
   jewellery: { label: 'Jewellery', blurb: 'Earrings, necklaces and sets to match your gown.' },
   bouquets: { label: 'Bouquets', blurb: 'Bridal and bridesmaid bouquets.' },
-  'bridal-robes': { label: 'Bridal Robes', blurb: 'Tulle robes for getting-ready photographs and bridal portraits.' },
+  'bridal-robes': { label: 'Bridal Robes', blurb: 'Tulle robes for getting-ready photographs and bridal portraits. Rental from ₦20,000.', rentFrom: 20000, priceNote: 'Robe rental starts from ₦20,000. The final price depends on the robe’s finishings.' },
 };
 
 export const GROUPS = {
@@ -82,6 +83,9 @@ export const POLICY_TEXT = {
 
 export const FAQS = [
   { q: 'How do I rent a gown?', a: 'Choose a style, then tap Enquire on WhatsApp with your event date and size. Favion confirms availability and the next steps.' },
+  { q: 'How much does it cost to rent a gown?', a: 'Gown rental ranges from ₦50,000 – ₦150,000, depending on the gown’s finishings. Bridal robes rent from ₦20,000. Accessories rent for a little less than gowns. Message us with the style you like and your date for an exact price.' },
+  { q: 'Can I buy a gown instead of renting?', a: 'Yes. Gowns to buy range from ₦250,000 – ₦400,000, depending on the finishings. Message us on WhatsApp with the style you have in mind.' },
+  { q: 'Do you have gowns for different body types and sizes?', a: 'Yes. Our collection includes gowns for a wide range of body types, shapes and sizes. Tell us what you have in mind and our team will help you find the silhouette that suits you best.' },
   { q: 'Is a WhatsApp message a booking?', a: 'No. It is an enquiry. A reservation is made only after Favion confirms availability and terms.' },
   { q: 'Can I try gowns on first?', a: 'Ask about fitting appointments when you enquire.' },
   { q: 'Do you plan events outside weddings?', a: 'Yes. Use the Event Planning page to tell us about your event.' },
@@ -145,6 +149,12 @@ export const PRODUCTS = [
   { ref: 'WG-107', name: 'Lace Sleeve Ball Gown', category: 'wedding-gowns', mode: 'Rent', style: 'Ball gown', sizes: SZ, colours: ['White'], price: null, images: pic('gown-lace-sleeve-clutch', 'Lace-sleeve ball gown'), description: 'A beaded lace-sleeve gown with a scoop neckline and a soft tulle skirt.' },
   { ref: 'WG-109', name: 'Red Mermaid Gown', category: 'wedding-gowns', mode: 'Rent', style: 'Mermaid', sizes: SZ, colours: ['Red'], price: null, images: pic('gown-red-mermaid', 'Red mermaid gown'), description: 'A fitted red mermaid gown with a ruffled sleeve and a tiered train.' },
   { ref: 'WG-112', name: 'Lace Illusion Ball Gown', category: 'wedding-gowns', mode: 'Rent', style: 'Ball gown', sizes: SZ, colours: ['White'], price: null, images: [MEDIA.stageBride], description: 'A high illusion neckline with short lace sleeves and a full tiered lace skirt, styled with a veil and tiara.' },
+  { ref: 'WG-113', name: 'Overskirt Long-Sleeve Gown', category: 'wedding-gowns', mode: 'Rent', style: 'Overskirt gown', sizes: SZ, colours: ['Ivory'], price: null, images: pic('hero-bride-lobby', 'Bride in a long-sleeve gown with a detachable overskirt'), description: 'A long-sleeve gown finished with a detachable overskirt for a dramatic entrance and an easy change for the reception.' },
+  { ref: 'WG-114', name: 'Embroidered Off-Shoulder Ball Gown', category: 'wedding-gowns', mode: 'Rent', style: 'Ball gown', sizes: SZ, colours: ['Ivory'], price: null, images: pic('hero-bride-offshoulder', 'Bride in an embroidered off-shoulder ball gown holding a bouquet'), description: 'An embroidered off-shoulder bodice with a full ball-gown skirt.' },
+  { ref: 'WG-115', name: 'Beaded Mermaid Gown', category: 'wedding-gowns', mode: 'Rent', style: 'Mermaid', sizes: SZ, colours: ['White'], price: null, images: pic('hero-mermaid-veil', 'Bride in a beaded mermaid gown with a long veil'), description: 'A fitted, beaded mermaid gown, shown with a long veil.' },
+  { ref: 'WG-116', name: 'Beaded Bodice Ball Gown', category: 'wedding-gowns', mode: 'Rent', style: 'Ball gown', sizes: SZ, colours: ['Ivory'], price: null, images: pic('hero-gown-display', 'Ball gown with a beaded bodice on display'), description: 'A ball gown with a richly beaded bodice and a full skirt.' },
+  { ref: 'WG-117', name: 'Lace Gown', category: 'wedding-gowns', mode: 'Rent', style: 'Lace gown', sizes: SZ, colours: ['White'], price: null, images: pic('hero-bride-gypsophila', 'Bride in a lace gown holding a gypsophila bouquet'), description: 'A lace gown with a soft, romantic finish.' },
+  { ref: 'WG-118', name: 'Beaded Cascade Gown', category: 'wedding-gowns', mode: 'Rent', style: 'Ball gown', sizes: SZ, colours: ['Ivory'], price: null, images: pic('hero-bride-bouquet', 'Bride in a beaded gown holding a cascade bouquet'), description: 'A beaded gown that pairs beautifully with a cascade bouquet.' },
   { ref: 'BR-501', name: 'Feather-Trim Tulle Robe', category: 'bridal-robes', mode: 'Rent', style: 'Tulle robe', sizes: [], colours: ['Caramel'], price: null, images: pic('robe-feather-caramel', 'Caramel tulle robe with feather trim'), description: 'A sheer tulle robe with soft feather trim on the sleeves and hem.' },
   { ref: 'BR-502', name: 'Ruffle Sleeve Tulle Robe', category: 'bridal-robes', mode: 'Rent', style: 'Tulle robe', sizes: [], colours: ['White'], price: null, images: pic('robe-ruffle-sleeve', 'White tulle robe with ruffled sleeves'), description: 'A flowing white robe with dramatic ruffled sleeves and a high slit.' },
   { ref: 'BR-503', name: 'Cloud Tulle Train Robe', category: 'bridal-robes', mode: 'Rent', style: 'Tulle robe', sizes: [], colours: ['White'], price: null, images: pic('robe-cloud-tulle', 'White tulle robe with a ruffled train'), description: 'A white tulle robe with puffed sleeves and a ruffle-edged train.' },
@@ -172,3 +182,9 @@ export const VENUES = [
   { slug: 'grand-ballroom', images: [MEDIA.stageDrapes, MEDIA.tables, MEDIA.stageFloral], name: 'The Grand Ballroom', area: 'Abuja', capacity: '300 to 600 guests', summary: 'A large indoor hall suited to a formal reception.', features: ['Air-conditioned hall', 'Stage and lighting', 'Bridal suite'], gallery: 4 },
   { slug: 'courtyard-terrace', images: [MEDIA.stageFloral, MEDIA.entrance], name: 'The Courtyard Terrace', area: 'Abuja', capacity: '60 to 150 guests', summary: 'An intimate terrace for smaller celebrations.', features: ['Terrace setting', 'Flexible layout', 'Evening lighting'], gallery: 3 },
 ];
+
+// Add real client reviews here. The Testimonials section on the home page appears only when this list has entries.
+// Example: { name: 'Amaka O.', text: 'Short quote from the client.', detail: 'Rented the Crystal Long-Sleeve Gown, June 2026' }
+export const TESTIMONIALS = [];
+// Paste the link clients use to leave a Google review (from your Google Business Profile). Leave '' to hide the button.
+export const GOOGLE_REVIEW_URL = '';

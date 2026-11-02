@@ -4,11 +4,13 @@ import ArchImage from '../components/ArchImage';
 import ProductCard from '../components/ProductCard';
 import WhatsAppButton from '../components/WhatsAppButton';
 import Banner from '../components/Banner';
+import Testimonials from '../components/Testimonials';
+import { boldPrices } from '../utils/boldPrices';
 import { PRODUCTS, PHOTOS, BANNERS } from '../data/site';
 
 const TILES = [
-  { to: '/gowns', title: 'Gowns', text: 'Wedding gowns to rent in every silhouette.', image: PHOTOS[8] },
-  { to: '/bridal-robes', title: 'Bridal Robes', text: 'Tulle robes for getting-ready photographs.', image: PHOTOS[7] },
+  { to: '/gowns', title: 'Gowns', text: 'Wedding gowns to rent from ₦50,000 – ₦150,000, or to buy.', image: PHOTOS[8] },
+  { to: '/bridal-robes', title: 'Bridal Robes', text: 'Tulle robes for getting-ready photographs, from ₦20,000.', image: PHOTOS[7] },
   { to: '/bridesmaid', title: 'Bridesmaid', text: 'Robes and coordinated bridal train outfits.', image: PHOTOS[2] },
   { to: '/accessories', title: 'Bridal Accessories', text: 'Tiaras, shoes, jewellery and bouquets.', image: PHOTOS[6] },
   { to: '/venues', title: 'Wedding Venues', text: 'Venues for ceremonies and receptions.', image: PHOTOS[4] },
@@ -28,7 +30,7 @@ export default function Home() {
               <Link key={t.to} to={t.to} className="tile">
                 <ArchImage label={t.title} tone={i} ratio="4 / 4.6" src={t.image?.src} alt={t.image?.alt} />
                 <h3>{t.title}</h3>
-                <p>{t.text}</p>
+                <p>{boldPrices(t.text)}</p>
               </Link>
             ))}
           </div>
@@ -37,6 +39,7 @@ export default function Home() {
       <section className="section">
         <div className="container">
           <h2>Featured gowns</h2>
+          <p>Gowns for every body type, shape and size, to rent or to buy.</p>
           <div className="grid grid--4">{PRODUCTS.filter((p) => p.category === 'wedding-gowns').slice(0, 4).map((p, i) => <ProductCard key={p.ref} product={p} tone={i} />)}</div>
           <p className="more"><Link className="btn btn--ghost" to="/gowns">See all gowns</Link></p>
         </div>
@@ -50,6 +53,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Testimonials />
       <section className="section section--plum">
         <div className="container">
           <h2>How renting works</h2>

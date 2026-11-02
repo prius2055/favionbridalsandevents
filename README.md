@@ -6,7 +6,9 @@ npm install && npm run dev
 - All enquiries go to WhatsApp. The event form builds a WhatsApp message; nothing is stored or emailed.
 - Venue galleries: set `gallery` (photo count) per venue in `site.js`; swap ArchImage for real images in `VenueDetail.jsx`.
 - The spec recommends WordPress + WooCommerce for production; this is the React front-end design.
-- Routing uses HashRouter (URLs look like `/#/venues`) so it works when opened as a file or on any static host. For clean URLs on a host with SPA fallback, switch to BrowserRouter in `src/main.jsx` and drop `base: './'` in `vite.config.js`.
+- Routing uses BrowserRouter (clean URLs like `/venues`). `public/_redirects` makes Netlify serve the app for every path. For local preview use `npm run dev` or `npm run preview`; opening `dist/index.html` directly will not work.
+- SEO: per-page titles and descriptions are set in `src/components/Meta.jsx`. `public/sitemap.xml` lists every page; add new products/venues to it. Business details for Google are in the JSON-LD block in `index.html`.
+- Reviews: add client quotes to `TESTIMONIALS` in `src/data/site.js` and the home page section appears.
 - To view the built site: `npm run build`, then `npm run preview` (or open `dist/index.html`).
 - Main menu is the `NAV` array in `src/data/site.js`. Add or reorder items there; the header and footer both read from it.
 - Items marked SAMPLE in `src/data/site.js` (products, venues, services, policies) are placeholders to replace. Contact details (phone, address, hours) are set in `SITE`.
