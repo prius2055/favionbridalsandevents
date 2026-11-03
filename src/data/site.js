@@ -11,6 +11,7 @@ export const SITE = {
   address: 'Block A, Shop 106, Maitama Modern Market, Kubwa, Abuja',
   hours: 'Daily, 9am to 5:30pm. Sundays by appointment only.',
   mapsUrl: '', // optional: paste your Google Maps share link; otherwise a map search for the address is used
+  mapsQuery: '', // optional but recommended: exact pin for the map and directions, e.g. '9.0821,7.3920' or the shop's name as it appears on Google Maps. Leave '' to use the address
 };
 
 const M = (name, alt, extra = {}) => ({ src: img(name), alt, ...extra });
