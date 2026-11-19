@@ -233,7 +233,7 @@ export const FAQS = [
   },
   {
     q: "Can I try gowns on first?",
-    a: "Ask about fitting appointments when you enquire.",
+    a: "Yes.Ask about fitting appointments when you enquire.",
   },
   {
     q: "Do you plan events outside weddings?",
