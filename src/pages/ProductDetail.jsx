@@ -3,7 +3,8 @@ import ArchImage from '../components/ArchImage';
 import WhatsAppButton from '../components/WhatsAppButton';
 import ProductCard from '../components/ProductCard';
 import { PRODUCTS, CATEGORIES } from '../data/site';
-import { productMessage, formatPrice } from '../utils/whatsapp';
+import { productMessage, priceLines, offerLabel } from '../utils/whatsapp';
+import { boldPrices } from '../utils/boldPrices';
 import NotFound from './NotFound';
 
 export default function ProductDetail() {
@@ -18,13 +19,13 @@ export default function ProductDetail() {
       <div className="detail">
         <ArchImage label={p.name} ratio="3 / 4" src={p.images[0]?.src} alt={p.images[0]?.alt} />
         <div>
-          <p className="eyebrow">{p.mode === 'Rent' ? 'For rent' : 'For sale'} · Ref {p.ref}</p>
+          <p className="eyebrow">{offerLabel(p)} · Ref {p.ref}</p>
           <h1>{p.name}</h1>
-          <p className="price">{formatPrice(p)}</p>
+          <p className="price">{priceLines(p).map((l) => <strong key={l}>{l}</strong>)}</p>
+          {p.mode === 'Rent' && CATEGORIES[p.category].priceNote && <p className="notice">{boldPrices(CATEGORIES[p.category].priceNote)}</p>}
           <p>{p.description}</p>
           <dl className="specs">
             <dt>Style</dt><dd>{p.style}</dd>
-            <dt>Sizes</dt><dd>{p.sizes.length ? p.sizes.join(', ') : 'One size / see details'}</dd>
             <dt>Colours</dt><dd>{p.colours.join(', ')}</dd>
           </dl>
           <div className="btn-row"><WhatsAppButton message={productMessage(p)}>Enquire on WhatsApp</WhatsAppButton><Link className="btn btn--ghost" to={`/category/${p.category}`}>Back to {CATEGORIES[p.category].label}</Link></div>

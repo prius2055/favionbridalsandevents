@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://favionbridalsandevents.com.ng/sitemap.xml
