@@ -207,19 +207,80 @@ export const POLICIES = {
   privacy: "Privacy",
 };
 
-export const POLICY_TEXT = {
-  "rental-terms": [
-    "Rental periods, deposits, fitting appointments and fees are confirmed by Favion when you enquire.",
-    "Gowns and accessories are reserved only after Favion confirms availability and agrees the terms with you.",
-  ],
-  "returns-and-cancellations": [
-    "Return dates, condition requirements and cancellation terms are agreed in writing at the time of reservation.",
-    "Please contact us on WhatsApp as early as possible if your plans change.",
-  ],
-  privacy: [
-    "Enquiries are sent to Favion through WhatsApp. This website does not store or email the details you enter in its forms.",
-    "Your information is used only to respond to your enquiry.",
-  ],
+export const POLICY_CONTENT = {
+  "rental-terms": {
+    intro:
+      "These are Favion's booking terms for gown rentals. You will be asked to sign our rental agreement when you book.",
+    highlights: [
+      ["Booking", "Secured by full payment"],
+      ["Refunds", "None after payment"],
+      ["Fireworks", "Not permitted"],
+    ],
+    sections: [
+      {
+        title: "Booking and payment",
+        items: [
+          "Once a booking is made, a passport photograph is required, together with your invitation card, your Facebook or Instagram page, or your pre-wedding picture.",
+          "Full payment validates your booking and preserves the dress for you.",
+          "Any balance must be paid before pick-up. Favion will confirm the deadline when you book.",
+          "Please cross-check your wedding dress and every other item given to you before pick-up.",
+        ],
+      },
+      {
+        title: "Caring for your dress",
+        items: [
+          "The use of fireworks is prohibited.",
+          "Please avoid hard stains and tears. If this is ignored, the bride will pay the full amount of the wedding dress.",
+          "Do not apply perfume, especially coloured perfume, to avoid stains.",
+          "Please handle the protection bag with care. If the dress is damaged beyond repair, the amount payable will be based on the value of the gown.",
+        ],
+      },
+    ],
+  },
+  "returns-and-cancellations": {
+    intro:
+      "Please read these terms before you book. They explain the caution fee, how to return your dress, and what happens if your plans change.",
+    highlights: [
+      ["Caution fee within Abuja", "₦20,000"],
+      ["Caution fee outside Abuja", "₦50,000"],
+      ["Return day", "Tuesday"],
+    ],
+    sections: [
+      {
+        title: "Caution fee",
+        items: [
+          "A caution fee of ₦20,000 applies within Abuja and ₦50,000 outside Abuja.",
+          "The caution fee is refunded in the same form it was received, once the wedding dress is returned without tear or loss of its attractive features, after one week of inspection.",
+        ],
+      },
+      {
+        title: "Returning your dress",
+        items: [
+          "All dresses should be returned by Tuesday. Failure to do so will attract the removal of the caution fee.",
+          "Please cross-check your wedding dress and every other item before returning.",
+          "Way-bill and logistics to and fro are the bride's responsibility.",
+        ],
+      },
+      {
+        title: "Cancellations and changes",
+        items: [
+          "There is no refund of money after payment.",
+          "Changing of gown is allowed with a top-up of ₦30,000 and above, depending on the wedding dress you are changing to.",
+        ],
+      },
+    ],
+  },
+  privacy: {
+    sections: [
+      {
+        title: "Your information",
+        items: [
+          "Enquiries are sent to Favion through WhatsApp. This website does not store or email the details you enter in its forms.",
+          "Your information is used only to respond to your enquiry.",
+        ],
+      },
+    ],
+  },
 };
 
 export const FAQS = [
@@ -230,6 +291,18 @@ export const FAQS = [
   {
     q: "Is a WhatsApp message a booking?",
     a: "No. It is an enquiry. A reservation is made only after Favion confirms availability and terms.",
+  },
+  {
+    q: "What is the caution fee?",
+    a: "A caution fee of ₦20,000 within Abuja or ₦50,000 outside Abuja is paid when you rent. It is refunded in the same form it was received once the dress is returned without tear or loss of its attractive features, after one week of inspection.",
+  },
+  {
+    q: "Can I change my gown after booking?",
+    a: "Yes. Changing of gown is allowed with a top-up of ₦30,000 and above, depending on the wedding dress you are changing to.",
+  },
+  {
+    q: "Can I get a refund?",
+    a: "There is no refund of money after payment, so please confirm your style and date before you pay.",
   },
   {
     q: "Can I try gowns on first?",
@@ -794,3 +867,50 @@ export const VENUES = [
     gallery: 3,
   },
 ];
+
+// Photos of real Favion brides, used in the "Our brides" section. Captions describe what is visible in each photo.
+// `text` is the bride's own words (shown as a quote). `summary` is a short statement she has approved, written in our words (shown without quote marks).
+export const TESTIMONIALS = [
+  {
+    image: `${import.meta.env.BASE_URL}images/brides/bride-ballroom.webp`,
+    w: 900,
+    h: 1401,
+    pos: "center 38%",
+    alt: "A Favion bride in a beaded off-shoulder ball gown with her groom, in a gold-draped reception hall",
+    name: "Zainab & David E.",
+    detail: "Wedding planning",
+    text: "Favion Bridals and Events planned our entire wedding, and it was pure magic from start to finish. They handled every vendor, timeline, and decor detail seamlessly so my husband and I could actually relax and enjoy our big day!",
+  },
+  {
+    image: `${import.meta.env.BASE_URL}images/brides/bride-steps.webp`,
+    w: 591,
+    h: 783,
+    pos: "center 25%",
+    alt: "A Favion bride in a tulle ball gown and veil, holding a bouquet",
+    name: "Elizabeth J.",
+    detail: "Gown and accessories rental",
+    text: "Renting my wedding dress and accessories from Favion Bridals and Events was the best decision I made. The gown fit like a dream, the tiara and veil completed the look, and nobody could tell it was a rental. I felt like absolute royalty!",
+  },
+  {
+    image: `${import.meta.env.BASE_URL}images/brides/bride-armchair.webp`,
+    w: 900,
+    h: 1483,
+    pos: "center 15%",
+    alt: "A smiling Favion bride in a high-neck ball gown with pearl detail and ruffled sleeves",
+    name: "Nancy O.",
+    detail: "Ball gown rental",
+    text: "From the moment I walked in for my fitting, the Favion team made me feel so special. My rented ballgown was spotless, luxurious, and comfortable all day long. Thank you for making me look and feel breathtaking!",
+  },
+  {
+    image: `${import.meta.env.BASE_URL}images/brides/bride-portrait.webp`,
+    w: 591,
+    h: 906,
+    pos: "center 30%",
+    alt: "A Favion bride in a beaded lace gown with long sheer sleeves",
+    name: "Ifeoma V.",
+    detail: "Gown and accessories",
+    text: "Favion Bridals and Events saved my budget without making me compromise on my dream dress. Their collection of gowns is stunning, and the staff helped me pick out the exact jewelry and veil to match. Truly a 10/10 experience!",
+  },
+];
+// Paste the link clients use to leave a Google review (from your Google Business Profile). Leave "" to hide the button.
+export const GOOGLE_REVIEW_URL = "";
