@@ -8,6 +8,7 @@ export const SITE = {
   whatsapp: "2349034365585", // international format, digits only; every WhatsApp enquiry goes to this number
   whatsappDisplay: "+234 903 436 5585",
   phoneLink: "+2349034365585",
+  email: "info@favionbridalsandevents.com.ng",
   address: "Block A, Shop 106, Maitama Modern Market, Kubwa, Abuja",
   hours: "Daily, 9am to 5:30pm. Sundays by appointment only.",
   mapsUrl: "", // optional: paste your Google Maps share link; otherwise a map search for the address is used
@@ -209,13 +210,8 @@ export const POLICIES = {
 
 export const POLICY_CONTENT = {
   "rental-terms": {
-    intro:
-      "These are Favion's booking terms for gown rentals. You will be asked to sign our rental agreement when you book.",
-    highlights: [
-      ["Booking", "Secured by full payment"],
-      ["Refunds", "None after payment"],
-      ["Fireworks", "Not permitted"],
-    ],
+    intro: "These are Favion's booking terms for gown rentals. You will be asked to sign our rental agreement when you book.",
+    highlights: [["Booking", "Secured by full payment"], ["Refunds", "None after payment"], ["Fireworks", "Not permitted"]],
     sections: [
       {
         title: "Booking and payment",
@@ -232,19 +228,14 @@ export const POLICY_CONTENT = {
           "The use of fireworks is prohibited.",
           "Please avoid hard stains and tears. If this is ignored, the bride will pay the full amount of the wedding dress.",
           "Do not apply perfume, especially coloured perfume, to avoid stains.",
-          "Please handle the protection bag with care. If the dress is damaged beyond repair, the amount payable will be based on the value of the gown.",
+          "Please handle the protection bag with care. If the dress is damaged beyond repair, the amount payable will be based on the value of the gown, not the displayed price.",
         ],
       },
     ],
   },
   "returns-and-cancellations": {
-    intro:
-      "Please read these terms before you book. They explain the caution fee, how to return your dress, and what happens if your plans change.",
-    highlights: [
-      ["Caution fee within Abuja", "₦20,000"],
-      ["Caution fee outside Abuja", "₦50,000"],
-      ["Return day", "Tuesday"],
-    ],
+    intro: "Please read these terms before you book. They explain the caution fee, how to return your dress, and what happens if your plans change.",
+    highlights: [["Caution fee within Abuja", "₦20,000"], ["Caution fee outside Abuja", "₦50,000"], ["Return day", "Tuesday"]],
     sections: [
       {
         title: "Caution fee",
@@ -585,6 +576,84 @@ export const PRODUCTS = [
       "A high illusion neckline with short lace sleeves and a full tiered lace skirt, styled with a veil and tiara.",
   },
   {
+    ref: "WG-113",
+    name: "Strapless Beaded Ball Gown",
+    category: "wedding-gowns",
+    mode: "Rent",
+    style: "Ball gown",
+    sizes: SZ,
+    colours: ["Ivory"],
+    price: null,
+    images: pic("gown-strapless-beaded", "A smiling bride in a strapless beaded ball gown with a short veil, holding a bouquet"),
+    description:
+      "A strapless ball gown with a beaded and embroidered bodice and a soft tulle skirt, shown with a short veil.",
+  },
+  {
+    ref: "WG-114",
+    name: "Lace Sleeve Ball Gown",
+    category: "wedding-gowns",
+    mode: "Rent",
+    style: "Ball gown",
+    sizes: SZ,
+    colours: ["White"],
+    price: null,
+    images: pic("gown-lace-sleeve-crown", "A bride in a lace-sleeve ball gown with a crown, holding a bouquet"),
+    description:
+      "A ball gown with three-quarter lace sleeves, a rounded neckline and a full tulle skirt finished with a lace hem.",
+  },
+  {
+    ref: "WG-115",
+    name: "Off-Shoulder Floral Sleeve Gown",
+    category: "wedding-gowns",
+    mode: "Rent",
+    style: "Ball gown",
+    sizes: SZ,
+    colours: ["White"],
+    price: null,
+    images: pic("gown-off-shoulder-floral", "A bride in an off-shoulder gown with sheer floral sleeves, holding a colourful bouquet"),
+    description:
+      "An off-shoulder lace bodice with sheer sleeves finished with floral appliqués, and a voluminous tulle skirt.",
+  },
+  {
+    ref: "WG-116",
+    name: "Tiered Lace Ball Gown",
+    category: "wedding-gowns",
+    mode: "Rent",
+    style: "Ball gown",
+    sizes: SZ,
+    colours: ["Ivory"],
+    price: null,
+    images: pic("gown-tiered-lace", "A bride in a strapless tiered lace ball gown"),
+    description:
+      "A strapless gown with an embroidered bodice and a tiered tulle skirt edged in lace.",
+  },
+  {
+    ref: "WG-117",
+    name: "Layered Overskirt Ball Gown",
+    category: "wedding-gowns",
+    mode: "Rent",
+    style: "Ball gown",
+    sizes: SZ,
+    colours: ["Ivory"],
+    price: null,
+    images: pic("gown-layered-overskirt", "A bride in a high-neck ball gown with a layered, embellished overskirt, veil and tiara"),
+    description:
+      "A high illusion neckline with beaded detail, sheer puff sleeves, a layered overskirt with embellished appliqués and a long train, shown with a veil and tiara.",
+  },
+  {
+    ref: "WG-118",
+    name: "Beaded Lace Gown with Pearl Veil",
+    category: "wedding-gowns",
+    mode: "Rent",
+    style: "Lace gown",
+    sizes: SZ,
+    colours: ["Ivory"],
+    price: null,
+    images: pic("gown-lace-pearl-veil", "A smiling bride in a beaded lace gown with long lace sleeves and a long veil dotted with pearls"),
+    description:
+      "A fitted, beaded lace gown with long lace sleeves, shown with a long veil dotted with pearls.",
+  },
+  {
     ref: "BR-501",
     name: "Feather-Trim Tulle Robe",
     category: "bridal-robes",
@@ -670,6 +739,45 @@ export const PRODUCTS = [
     ),
     description:
       "A beaded corset bodice with a sheer tulle overskirt and a long train.",
+  },
+  {
+    ref: "BR-507",
+    name: "Sparkle Floral Appliqué Robe",
+    category: "bridal-robes",
+    mode: "Rent",
+    style: "Sequin robe",
+    sizes: [],
+    colours: ["Champagne"],
+    price: null,
+    images: pic("robe-sparkle-applique", "The back of an off-shoulder sparkling robe with floral appliqué, a lace-up back and a long train edged in tulle"),
+    description:
+      "An off-shoulder robe in shimmering sequins and floral appliqué, with sheer sleeves, a lace-up back and a long train edged in soft tulle.",
+  },
+  {
+    ref: "BR-508",
+    name: "Blush Sparkle Floral Robe",
+    category: "bridal-robes",
+    mode: "Rent",
+    style: "Sequin robe",
+    sizes: [],
+    colours: ["Blush"],
+    price: null,
+    images: pic("robe-blush-sparkle", "A bride-to-be in an off-shoulder blush sparkling robe with pink floral appliqué, sitting among balloons"),
+    description:
+      "An off-shoulder robe in shimmering sequins with pink floral appliqué, sheer sleeves and a full, voluminous skirt.",
+  },
+  {
+    ref: "BR-509",
+    name: "Pearl Corset Tulle Robe",
+    category: "bridal-robes",
+    mode: "Rent",
+    style: "Tulle robe",
+    sizes: [],
+    colours: ["White"],
+    price: null,
+    images: pic("robe-pearl-corset", "A woman in a white robe with a pearl-beaded corset bodice, ruffled tulle shoulders and a tulle skirt with a slit"),
+    description:
+      "A pearl-beaded corset bodice with lace panels and ruffled tulle shoulders, over a soft tulle skirt with a front slit.",
   },
   {
     ref: "BM-201",
@@ -872,43 +980,27 @@ export const VENUES = [
 // `text` is the bride's own words (shown as a quote). `summary` is a short statement she has approved, written in our words (shown without quote marks).
 export const TESTIMONIALS = [
   {
-    image: `${import.meta.env.BASE_URL}images/brides/bride-ballroom.webp`,
-    w: 900,
-    h: 1401,
-    pos: "center 38%",
+    image: `${import.meta.env.BASE_URL}images/brides/bride-ballroom.webp`, w: 900, h: 1401, pos: "center 38%",
     alt: "A Favion bride in a beaded off-shoulder ball gown with her groom, in a gold-draped reception hall",
-    name: "Zainab & David E.",
-    detail: "Wedding planning",
+    name: "Zainab & David E.", detail: "Wedding planning",
     text: "Favion Bridals and Events planned our entire wedding, and it was pure magic from start to finish. They handled every vendor, timeline, and decor detail seamlessly so my husband and I could actually relax and enjoy our big day!",
   },
   {
-    image: `${import.meta.env.BASE_URL}images/brides/bride-steps.webp`,
-    w: 591,
-    h: 783,
-    pos: "center 25%",
+    image: `${import.meta.env.BASE_URL}images/brides/bride-steps.webp`, w: 591, h: 783, pos: "center 25%",
     alt: "A Favion bride in a tulle ball gown and veil, holding a bouquet",
-    name: "Elizabeth J.",
-    detail: "Gown and accessories rental",
+    name: "Elizabeth J.", detail: "Gown and accessories rental",
     text: "Renting my wedding dress and accessories from Favion Bridals and Events was the best decision I made. The gown fit like a dream, the tiara and veil completed the look, and nobody could tell it was a rental. I felt like absolute royalty!",
   },
   {
-    image: `${import.meta.env.BASE_URL}images/brides/bride-armchair.webp`,
-    w: 900,
-    h: 1483,
-    pos: "center 15%",
+    image: `${import.meta.env.BASE_URL}images/brides/bride-armchair.webp`, w: 900, h: 1483, pos: "center 15%",
     alt: "A smiling Favion bride in a high-neck ball gown with pearl detail and ruffled sleeves",
-    name: "Nancy O.",
-    detail: "Ball gown rental",
+    name: "Nancy O.", detail: "Ball gown rental",
     text: "From the moment I walked in for my fitting, the Favion team made me feel so special. My rented ballgown was spotless, luxurious, and comfortable all day long. Thank you for making me look and feel breathtaking!",
   },
   {
-    image: `${import.meta.env.BASE_URL}images/brides/bride-portrait.webp`,
-    w: 591,
-    h: 906,
-    pos: "center 30%",
+    image: `${import.meta.env.BASE_URL}images/brides/bride-portrait.webp`, w: 591, h: 906, pos: "center 30%",
     alt: "A Favion bride in a beaded lace gown with long sheer sleeves",
-    name: "Ifeoma V.",
-    detail: "Gown and accessories",
+    name: "Ifeoma V.", detail: "Gown and accessories",
     text: "Favion Bridals and Events saved my budget without making me compromise on my dream dress. Their collection of gowns is stunning, and the staff helped me pick out the exact jewelry and veil to match. Truly a 10/10 experience!",
   },
 ];

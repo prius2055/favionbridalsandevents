@@ -16,7 +16,7 @@ const STATIC = {
   '/event-planning': ['Wedding and event planning in Abuja', 'Wedding planning, decor and styling, venue sourcing and day-of coordination. Tell us your date on WhatsApp.'],
   '/gallery': ['Gallery', 'A look at Favion gowns, accessories, decor and events.'],
   '/about': ['About us', 'About Favion Bridals and Events in Kubwa, Abuja: bridal gown rental and sales, accessories, makeup and styling, venues and event planning. Perfection, excellence and customer satisfaction.'],
-  '/contact': ['Contact and location', `Visit us at ${SITE.address}. Open ${SITE.hours} Chat on WhatsApp: ${SITE.whatsappDisplay}.`],
+  '/contact': ['Contact and location', `Visit us at ${SITE.address}. Open ${SITE.hours} Chat on WhatsApp: ${SITE.whatsappDisplay} or email ${SITE.email}.`],
   '/faq': ['Frequently asked questions', 'Answers about renting gowns, fittings, bookings and event planning at Favion.'],
 };
 

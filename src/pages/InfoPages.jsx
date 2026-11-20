@@ -127,7 +127,7 @@ export function Contact() {
       <div className="page-head"><h1>Contact</h1><p>The quickest way to reach us is WhatsApp.</p></div>
       <div className="split split--stretch">
       <div>
-      <dl className="specs"><dt>Phone and WhatsApp</dt><dd><a href={`tel:${SITE.phoneLink}`}>{SITE.whatsappDisplay}</a></dd><dt>Address</dt><dd>{SITE.address}<br /><a href={viewUrl} target="_blank" rel="noopener noreferrer">Open in Google Maps</a></dd><dt>Hours</dt><dd>{SITE.hours}</dd></dl>
+      <dl className="specs"><dt>Phone and WhatsApp</dt><dd><a href={`tel:${SITE.phoneLink}`}>{SITE.whatsappDisplay}</a></dd><dt>Email</dt><dd><a href={`mailto:${SITE.email}`}>{SITE.email}</a></dd><dt>Address</dt><dd>{SITE.address}<br /><a href={viewUrl} target="_blank" rel="noopener noreferrer">Open in Google Maps</a></dd><dt>Hours</dt><dd>{SITE.hours}</dd></dl>
       <div className="btn-row">
         <a className="btn" href={directionsUrl} target="_blank" rel="noopener noreferrer">Get directions</a>
         <WhatsAppButton>Chat with Favion on WhatsApp</WhatsAppButton>
